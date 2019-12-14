@@ -1,0 +1,179 @@
+@import "variables";
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.6;
+  color: $greyText;
+  height: 100%;
+  background-color: $light2;
+
+  & a {
+    text-decoration: none;
+    color: $light;
+
+    &:hover {
+      color: $primaryLight;
+    }
+  }
+
+  & ul {
+    list-style-type: none;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-weight: 400;
+    margin-bottom: .5rem;
+  }
+
+
+  & input[type='button'], & input[type='submit'], & button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 2.6rem;
+    padding: .8rem 2.6rem;
+    background-color: white;
+    color: $greyDTextDark;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  & input[type='text'], & input[type='email'], & input[type='password'] {
+    width: 100%;
+    padding: .8rem 1.6rem;
+    border: 1px solid rgba($greyText, .1);
+    border-radius: 2.4rem;
+    font-size: inherit;
+    font-family: inherit;
+    outline: none;
+    margin-bottom: 1rem;
+    color: $success;
+    background-color: rgba($primary, .03);
+
+    &:focus {
+      box-shadow: .4rem .4rem .8rem rgba($success, .15);
+      border: 1px solid rgba($success, .2);
+      background-color: $light;
+    }
+  }
+
+  input[type='radio'] {
+    display: none;
+    margin-bottom: 1rem;
+    &:checked ~ label .radio-button::after {
+      opacity: 1;
+      transition: opacity .3s ease-in;
+    }
+  }
+}
+
+.container {
+  max-width: 120rem;
+  width: calc(100vw - 2em);
+  margin: auto;
+}
+
+.card {
+  background-color: $light;
+  padding: 2rem;
+  border-radius: .6rem;
+  box-shadow: 1rem 1rem 2rem rgba($greyText, .2);
+  margin-bottom: 1.6rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+.btn {
+
+  &-lg {
+    padding: 1.2rem 3.2rem;
+  }
+
+  &-primary {
+    background-color: $primary;
+    color: $light;
+  }
+
+  &-danger {
+    background-color: $danger;
+    color: $light;
+  }
+
+  &-success {
+    background-color: $success;
+    color: $light;
+  }
+}
+
+.text-heading {
+  font-size: 2.8rem;
+  text-transform: capitalize;
+  font-weight: 400;
+  margin-bottom: 1.6rem;
+  color: $greyDTextDark;
+}
+
+.text-center {
+  text-align: center;
+}
+
+//Animations
+.item {
+
+  &-enter {
+    opacity: 0;
+    transform: scale(.9);
+    &-active {
+      opacity: 1;
+      transform: scale(1);
+      transition: all .3s ease-in;
+    }
+  }
+
+  &-exit {
+
+    opacity: 1;
+    &-active {
+      opacity: 0;
+      transform: scale(.9);
+      transition: all .3s ease-out;
+    }
+  }
+}
+
+.alert {
+  padding: 1rem;
+  text-align: center;
+
+  &-danger {
+    background-color: $danger;
+    color: $light;
+  }
+
+  &-success {
+    background-color: $success;
+    color: $light;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .card {
+    max-width: 98%;
+  }
+}

@@ -1,0 +1,71 @@
+@import "../../variables";
+
+.contacts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 2rem;
+}
+
+.badge {
+  padding: .4rem 1.2rem;
+  border-radius: 2.4rem;
+  background-color: white;
+  color: $greyDTextDark;
+  float: right;
+  font-size: 1.2rem;
+  font-weight: 300;
+
+  &-primary {
+    background-color: $primary;
+    color: $light;
+  }
+
+  &-success {
+    background-color: $success;
+    color: $light;
+  }
+}
+
+.form-group {
+  display: inline-block;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+
+  & label {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  & .radio-button {
+    height: 2rem;
+    width: 2rem;
+    border: 2px solid $success;
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    margin-right: .5rem;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      height: 1rem;
+      width: 1rem;
+      background-color: $success;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .contacts {
+    grid-template-columns: 1fr;
+  }
+}
